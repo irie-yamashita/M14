@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books EJS</title>
+</head>
+<body>
+    <header>
+        <h1>Productes de <%= user.name %></h1>
+        <p><%- htmlMessage %></p>
+    </header>
+    <main>
+        <section>
+            <h3>Llista productes</h3>
+            <ul>
+
+                <% data.products.forEach((product) => { %>
+                    <li>
+                        <strong><%= product.name %></strong><br>
+                        <span>Categoria: <%= product.category %></span><br>
+                        <span>Preu: <%= product.price %>€</span>
+                    </li>
+                    <hr>
+                    
+                    
+                <% }) %>
+            </ul>
+                </section>
+    </main>
+
+    
+</body>
+</html>
