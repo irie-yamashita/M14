@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books EJS</title>
+    <link rel="stylesheet" href="/flowers-styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Florari</h1>
+        <p><%- htmlMessage %></p>
+    </header>
+    <main>
+        <section>
+            <h3>Llistat de flors</h3>
+            <div class="flowers-container">
+
+                <% data.flowers.forEach((flower)=> { %>
+                    <div class="flower">
+                        <img src=<%= flower.img %> alt="foto flor">
+                        <div class="flower-info">
+                            <strong>
+                                <%= flower.name %>
+                            </strong><br>
+                            <span>Categoria: <%= flower.category %></span><br>
+                            <span>Descripció: <%= flower.description %></span>
+                        </div>
+
+                    </div>
+
+                    <% }) %>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+
+</html>

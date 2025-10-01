@@ -50,36 +50,56 @@
             "id": 1,
             "name": "Rosa",
             "category": "Flors per a jardins",
-            "price": 5.50,
-            "color": "Vermella"
+            "color": "Vermell",
+            "meaning": "Amor i passió",
+            "bloomSeason": "Primavera",
+            "origin": "Àsia",
+            "description": "La rosa vermella és símbol universal de l’amor. Amb els seus pètals suaus i aroma intens, floreix com una promesa en els jardins de primavera.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
         },
         {
             "id": 2,
             "name": "Lliri",
             "category": "Flors d'interior",
-            "price": 8.75,
-            "color": "Blanca"
+            "color": "Blanc",
+            "meaning": "Puresa i renovació",
+            "bloomSeason": "Estiu",
+            "origin": "Europa",
+            "description": "El lliri blanc destaca per la seva elegància serena. Sovint associat amb la puresa, omple els espais amb una presència tranquil·la i refinada.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
         },
         {
             "id": 3,
             "name": "Margarita",
             "category": "Flors silvestres",
-            "price": 3.20,
-            "color": "Blanca"
+            "color": "Blanc",
+            "meaning": "Innocència i sinceritat",
+            "bloomSeason": "Primavera",
+            "origin": "Amèrica del Nord",
+            "description": "Amb el seu cor groc i pètals blancs, la margarita evoca la simplicitat de la natura. És la flor dels camps oberts i dels somnis infantils.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
         },
         {
             "id": 4,
             "name": "Tulipa",
             "category": "Flors per a jardins",
-            "price": 7.00,
-            "color": "Groga"
+            "color": "Groc",
+            "meaning": "Alegria i amistat",
+            "bloomSeason": "Primavera",
+            "origin": "Turquia",
+            "description": "La tulipa groga brilla com un raig de sol. Representa l’alegria compartida i és ideal per regalar a aquells que il·luminen la teva vida.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
         },
         {
             "id": 5,
             "name": "Orquídia",
             "category": "Flors exòtiques",
-            "price": 15.30,
-            "color": "Violeta"
+            "color": "Violeta",
+            "meaning": "Elegància i misteri",
+            "bloomSeason": "Tardor",
+            "origin": "Regions tropicals",
+            "description": "L’orquídia violeta és una flor sofisticada i enigmàtica. Amb formes úniques i colors intensos, captiva la mirada i desperta la curiositat.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
         }
     ]
 }

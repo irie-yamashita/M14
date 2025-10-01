@@ -48,6 +48,12 @@ app.get('/products', (req, res) => {
     //es.json(data.products);
 });
 
+app.get('/flowers', (req, res) => {
+    const htmlMessage = `
+    <a href="/">Visita la web</a>`;
+    const data = readData();
+    res.render("flowers", { data, htmlMessage })
+});
 
 app.get("/login", (req, res) => {
      res.render("login")
