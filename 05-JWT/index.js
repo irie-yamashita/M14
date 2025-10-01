@@ -41,13 +41,16 @@ app.get("/", (req, res) => {
 app.get('/products', (req, res) => {
     const user = { name: "ITB" }
     const htmlMessage = `
-    <p>Aquest és un text <strong>amb estil</strong> i un enllaç:</p>
-    <a href="https://www.example.com">Visita Example</a>`;
+    <p>A continuació una llista de <strong>productes barats</strong> i de bona qualitat:</p>
+    <a href="https://itb.cat/">Visita la web</a>`;
     const data = readData();
     res.render("products", { user, data, htmlMessage })
-    r//es.json(data.products);
+    //es.json(data.products);
+});
 
 
+app.get("/login", (req, res) => {
+     res.render("login")
 });
 
 

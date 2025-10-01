@@ -1,0 +1,85 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Laptop",
+            "category": "Electronics",
+            "price": 12.99
+        },
+        {
+            "id": 2,
+            "name": "Tablet",
+            "category": "Electronics",
+            "price": 120.30
+        },
+        {
+            "id": 3,
+            "name": "Mobile",
+            "category": "Electronics",
+            "price": 22.12
+        },
+        {
+            "id": 4,
+            "name": "Air Fryer",
+            "category": "Cook",
+            "price": 0.55
+        }
+    ],
+    "books": [
+        {
+            "id": 1,
+            "name": "Los 7 hábitos de la gente altamente efectiva",
+            "author": "Stephen R. Covey",
+            "year": 1989
+        },
+        {
+            "id": 2,
+            "name": "Padre rico, padre pobre",
+            "author": "Robert Kiyosaki",
+            "year": 1997
+        },
+        {
+            "id": 3,
+            "name": "Charlie & the Chocolate Factory",
+            "author": "Roald Dahl",
+            "year": 1964
+        }
+    ],
+    "flowers": [
+        {
+            "id": 1,
+            "name": "Rosa",
+            "category": "Flors per a jardins",
+            "price": 5.50,
+            "color": "Vermella"
+        },
+        {
+            "id": 2,
+            "name": "Lliri",
+            "category": "Flors d'interior",
+            "price": 8.75,
+            "color": "Blanca"
+        },
+        {
+            "id": 3,
+            "name": "Margarita",
+            "category": "Flors silvestres",
+            "price": 3.20,
+            "color": "Blanca"
+        },
+        {
+            "id": 4,
+            "name": "Tulipa",
+            "category": "Flors per a jardins",
+            "price": 7.00,
+            "color": "Groga"
+        },
+        {
+            "id": 5,
+            "name": "Orquídia",
+            "category": "Flors exòtiques",
+            "price": 15.30,
+            "color": "Violeta"
+        }
+    ]
+}

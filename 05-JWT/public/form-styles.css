@@ -1,0 +1,49 @@
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+h2 {
+    text-align: center;
+    color: blue;
+}
+
+form {
+    width: 70%;
+
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+button {
+    background-color: blue;
+    color: whitesmoke;
+    padding: 10px;
+
+    border-radius: 8px;
+}
