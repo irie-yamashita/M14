@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="form-styles.css" />
+  </head>
+
+  <body>
+    <form id="register-form">
+      <h2>Register</h2>
+      <label for="register-username">Username:</label>
+      <input type="text" id="register-username" name="username" required />
+
+      <label for="register-password">Password</label>
+      <input type="password" id="register-password" name="password" required />
+
+      <label for="register-confirm-password">Password</label>
+      <input
+        type="password"
+        id="register-confirm-password"
+        name="confirm-password"
+        required
+      />
+
+      <button type="submit">Register</button>
+      <span>&nbsp;</span>
+    </form>
+  </body>
+  <script>
+    
+    const qs = el = document.query(el); //snipped code
+
+    const registerForm = qs("#register-form");
+    const registerSpan = qs("#register-form span");
+
+    registerForm.addEventListener('submit', (e) => { //* e = event
+      e.preventDefault(); //pq no s'enviï el formulari i pugui fer validacions+
+
+      const username = qs("#register-username");
+      const password = qs("#register-password");
+      const confirmPassword = qs("#register-confirm-password");
+
+      //psswd != confirmPsswd ?? alert('Les contrasenyes no coincideixen! :/');
+
+      if(password != confirmPassword) {
+        alert('Les contrasenyes no coincideixen! :/');
+        return
+      }
+
+      fetch('/register', {
+        method: "POST",
+        headers: { "Content-Type": "application" },
+        body: JSON.stringify((username, password))
+      }).then(res => {
+
+        if(res.ok) {
+          registerSpan.innerText = 'Usuari registrat';
+          registerSpan.style.color = 'green';
+        } else {
+          registerSpan.innerText = 'Error en registrar l\'usuari';
+          registerSpan.style.color = 'red';
+        }
+      })
+
+
+    })
+
+  </script>
+</html>
