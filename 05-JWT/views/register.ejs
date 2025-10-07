@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
-    <link rel="stylesheet" href="form-styles.css" />
   </head>
 
   <body>
@@ -29,43 +28,43 @@
     </form>
   </body>
   <script>
-    
-    const qs = el = document.query(el); //snipped code
+    const qs = el => document.querySelector(el); //snipped code
 
     const registerForm = qs("#register-form");
     const registerSpan = qs("#register-form span");
 
-    registerForm.addEventListener('submit', (e) => { //* e = event
+    registerForm.addEventListener("submit", (e) => {
+      //* e = event
       e.preventDefault(); //pq no s'enviï el formulari i pugui fer validacions+
 
-      const username = qs("#register-username");
-      const password = qs("#register-password");
-      const confirmPassword = qs("#register-confirm-password");
+      const username = qs("#register-username").value;
+      const password = qs("#register-password").value;
+      const confirmPassword = qs("#register-confirm-password").value;
 
       //psswd != confirmPsswd ?? alert('Les contrasenyes no coincideixen! :/');
 
-      if(password != confirmPassword) {
-        alert('Les contrasenyes no coincideixen! :/');
-        return
+      console.log(password, confirmPassword, 'contrasenyes')
+      if (password != confirmPassword) {
+        alert("Les contrasenyes no coincideixen! :/");
+        return;
       }
 
-      fetch('/register', {
+      fetch("/register", {
         method: "POST",
-        headers: { "Content-Type": "application" },
-        body: JSON.stringify((username, password))
-      }).then(res => {
-
-        if(res.ok) {
-          registerSpan.innerText = 'Usuari registrat';
-          registerSpan.style.color = 'green';
-        } else {
-          registerSpan.innerText = 'Error en registrar l\'usuari';
-          registerSpan.style.color = 'red';
-        }
+        headers: { 
+          "Content-Type": "application/json" //!!! important 'application/json'
+        },
+        body: JSON.stringify({username, password}),
       })
-
-
-    })
-
+      .then((res) => {
+        if (res.ok) {
+          registerSpan.innerText = "Usuari registrat";
+          registerSpan.style.color = "green";
+        } else {
+          registerSpan.innerText = "Error en registrar l'usuari";
+          registerSpan.style.color = "red";
+        }
+      });
+    });
   </script>
 </html>

@@ -1,6 +1,8 @@
 import express from 'express';
 import { PORT, SECRET_JWT_KEY } from './config.js';
+
 import { name } from 'ejs';
+import { UserRepository } from './user-repository.js';
 
 const app = express();
 
@@ -19,11 +21,19 @@ app.get('/', (req, res) => {
 
 });
 
-app.post('/register', (req, res) => {
+app.post('/register', async (req, res) => {
+    
     // quan envio formulari, les dades s'envien en el body de la petició
     const { username, password } = req.body;
+    console.log(req.method);
 
-    console.log(username, name);
+    try {
+        const id = await UserRepository.create({username, password});
+        res.send({id});
+
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
 });
 
 app.listen(PORT, (req, res)=>{
