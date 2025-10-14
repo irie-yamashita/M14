@@ -1,0 +1,42 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "FrancescLaptop",
+            "price": "999.99",
+            "category": "Electronics"
+        },
+        {
+            "id": 2,
+            "name": "Laptop 2",
+            "price": 999.99,
+            "category": "Electronics"
+        },
+        {
+            "id": 3,
+            "name": "Gaming Laptop",
+            "price": 1199.99,
+            "category": "Electronics"
+        },
+        {
+            "id": 4,
+            "name": "Laptop 4",
+            "price": 999.99,
+            "category": "Electronics"
+        }
+    ],
+    "books": [
+        {
+            "id": 1,
+            "name": "Los 7 hábitos de la gente altamente efectiva",
+            "author": "Stephen R. Covey",
+            "year": 1989
+        },
+        {
+            "id": 2,
+            "name": "Padre rico, padre pobre",
+            "author": "Robert Kiyosaki",
+            "year": 1997
+        }
+    ]
+}
