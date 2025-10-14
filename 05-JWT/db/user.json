@@ -1,1 +1,7 @@
-[{"_id":"eb05e990-6494-4e48-8332-e99ad39bcda9","username":"itbb","password":"$2b$10$qObfBX9BTb6WpseCGj1B4OEVUTulJGK/i5VwOgKyqymPx9As5cu/m"}]
+[
+  {
+    "_id": "eb05e990-6494-4e48-8332-e99ad39bcda9",
+    "username": "itbb",
+    "password": "$2b$10$qObfBX9BTb6WpseCGj1B4OEVUTulJGK/i5VwOgKyqymPx9As5cu/m"
+  }
+]

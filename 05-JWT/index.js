@@ -7,6 +7,7 @@ import { UserRepository } from './user-repository.js';
 const app = express();
 
 app.use(express.json()); // processar solicituds en format json
+app.use(cookieParser());
 app.use(express.static("public")); //?
 
 app.set('view engine', 'ejs');//Fem servir el motor ejs

@@ -1,0 +1,19 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 20px;
+}
+
+.form-container h2 {
+    text-align: center;
+}
+
+#login-form, #register-form {
+    display: flex;
+    flex-direction: column;
+}
