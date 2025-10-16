@@ -13,7 +13,7 @@ app.set("views", "./views"); // Ubicació de les plantilles
 
 app.get("/", (req, res) => {
 
-    res.render("login");
+  res.render("register");
 });
 
 

@@ -2,7 +2,7 @@
 - el .prpeventDefault( ) va al formulari (no al botó)
 - no t'oblidis de l'atribut 'name' dels inputs
 - recupera els valors dels inputs dintre del addEventListener()
-
+- stringify el body
 -->
 
 <!DOCTYPE html>
@@ -10,13 +10,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <main>
-        <h1>LOGIN</h1>
-        <form id="login-form">
+        <h1>Registra't</h1>
+        <form id="register-form">
             <div class="input-container">
                 <label for="username">Usuari:</label>
                 <input type="text" id="username" name="username">
@@ -25,6 +25,11 @@
                 <label for="password">Contrasenya:</label>
                 <input type="password" id="password" name="password">
             </div>
+            <div class="input-container">
+                <label for="password-confirm">Repeteix la contrasenya:</label>
+                <input type="password" id="password-confirm" name="password-confirm">
+            </div>
+            <span class="span-info">INFO</span>
             <button type="submit">Iniciar Sessió</button>
         </form>
     </main>
@@ -35,16 +40,35 @@
     const $ = el => document.querySelector(el);
 
 
-    const formulari = $('#login-form');
+    const loginSpan = $('.span-info')
+    const formulari = $('#register-form');
     
 
 
     formulari.addEventListener('submit', e => {
         e.preventDefault();
 
+
         const username = $('#username').value;
         const password = $('#password').value;
-        
+        const passwordConfirm = $('#password-confirm').value;
+
+
+        if(password !== passwordConfirm) {
+            alert('Les contrasenyes no coincideixen :(');
+            return;
+        };
+
+        fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username, password })
+        })
+        .then((res) => {
+            // TODO
+        });
         
     });
 
