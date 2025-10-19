@@ -3,16 +3,19 @@
 - no t'oblidis de l'atribut 'name' dels inputs
 - recupera els valors dels inputs dintre del addEventListener()
 - stringify el body
+- després de fer fetch, fer un .then on comprivi si res.ok (i donar feedback a l'usuari)
 -->
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
     <main>
         <h1>Registra't</h1>
@@ -34,15 +37,14 @@
         </form>
     </main>
 </body>
+
 </html>
 
 <script>
     const $ = el => document.querySelector(el);
 
 
-    const loginSpan = $('.span-info')
     const formulari = $('#register-form');
-    
 
 
     formulari.addEventListener('submit', e => {
@@ -52,9 +54,11 @@
         const username = $('#username').value;
         const password = $('#password').value;
         const passwordConfirm = $('#password-confirm').value;
+        
+        const registerSpan = $('.span-info');
 
 
-        if(password !== passwordConfirm) {
+        if (password !== passwordConfirm) {
             alert('Les contrasenyes no coincideixen :(');
             return;
         };
@@ -66,10 +70,20 @@
             },
             body: JSON.stringify({ username, password })
         })
-        .then((res) => {
-            // TODO
-        });
-        
+            .then((res) => {
+                if (res.ok) {
+                    registerSpan.innerText = "Usuari registrat";
+                    registerSpan.style.color = "green";
+
+                    console.log("Usuari registrat");
+                } else {
+                    registerSpan.innerText = "Error en registrar l'usuari";
+                    registerSpan.style.color = "red";
+
+                    console.log("Error en registrar l'usuari");
+                }
+            });
+
     });
 
 </script>
