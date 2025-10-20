@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Planta - Plantarium</title>
+</head>
+
+<body>
+    <main>
+        <h2>Modificar planta</h2>
+        <input type="hidden" id="plant-id" value="<%= data.id %>">
+
+        <form id="plant-form">
+
+            <div>
+                <label for="type">Tipus de planta:</label>
+                <select id="type" name="type">
+                    <option value="flor" <%= data.type === 'flor' ? 'selected' : '' %>>Flor</option>
+                    <option value="arbre" <%= data.type === 'arbre' ? 'selected' : '' %>>Arbre</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" value="<%= data.name %>" required>
+            </div>
+
+            <div>
+                <label for="category">Categoria:</label>
+                <input type="text" id="category" name="category" value="<%= data.category %>">
+            </div>
+
+            <div>
+                <label for="bloomSeason">Estació de floració:</label>
+                <select id="bloomSeason" name="bloomSeason">
+                    <option value="Primavera" <%= data.bloomSeason === 'Primavera' ? 'selected' : '' %>>Primavera</option>
+                    <option value="Estiu" <%= data.bloomSeason === 'Estiu' ? 'selected' : '' %>>Estiu</option>
+                    <option value="Tardor" <%= data.bloomSeason === 'Tardor' ? 'selected' : '' %>>Tardor</option>
+                    <option value="Hivern" <%= data.bloomSeason === 'Hivern' ? 'selected' : '' %>>Hivern</option>
+                </select>
+
+            </div>
+
+            <div>
+                <label for="origin">Origen:</label>
+                <input type="text" id="origin" name="origin" value="<%= data.origin %>">
+            </div>
+
+            <div>
+                <label for="description">Descripció:</label>
+                <textarea id="description" name="description" rows="4" cols="50"><%= data.description %></textarea>
+            </div>
+
+            <div>
+                <button type="submit">Desar canvis</button>
+            </div>
+
+        </form>
+    </main>
+</body>
+
+</html>
+
+<script defer>
+    const form = document.getElementById('plant-form');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const type = document.getElementById('type').value;
+        const id = document.getElementById('plant-id').value; // només si edites
+        const ruta = type === 'flor' ? '/flors' : '/arbres';
+
+        const data = {
+            name: document.getElementById('name').value,
+            category: document.getElementById('category').value,
+            bloomSeason: document.getElementById('bloomSeason').value,
+            origin: document.getElementById('origin').value,
+            description: document.getElementById('description').value
+        };
+
+        fetch(`${ruta}/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(res => {
+            if (!res.ok) throw new Error('Error en modificar la planta');
+            return res.json();
+        })
+        .then(data => {
+            console.log('Planta modificada', data);
+            window.location.href = ruta; // torna a la llista
+        })
+        .catch(error => {
+            console.error('Error en modificar la planta:', error);
+        });
+    });
+
+
+</script>

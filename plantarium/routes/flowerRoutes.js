@@ -39,6 +39,16 @@ router.get('/form', (req, res) => {
     res.render("form", { data });
 });
 
+// GET /flors
+router.get('/form-edit', (req, res) => {
+    const id = req.query.id;
+    const data = readData();
+    const dataFlower = data.flowers.find(flower => flower.id === id);
+
+    res.render("form-edit", { data: dataFlower });
+});
+
+
 // POST /flors
 router.post('/', (req, res) => {
     const data = readData();
@@ -64,6 +74,29 @@ router.post('/', (req, res) => {
     writeData(data);
 
     res.status(201).json(newPlant);
+});
+
+// PUT /flors/:id
+router.put("/flors/:id", (req, res) => {
+    const data = readData();             
+    const body = req.body; 
+    const id = req.params.id;
+
+    const flowerIndex = data.flowers.findIndex(flower => flower.id === id);
+
+    if (flowerIndex === -1) {
+        return res.status(404).json({ message: "Flor no trobada" });
+    }
+
+    // Actualitzem només els camps enviats
+    data.flowers[flowerIndex] = {
+        ...data.flowers[flowerIndex],
+        ...body
+    };
+
+    writeData(data);
+
+    res.json({ message: "Flor actualitzada correctament" });
 });
 
 // DELETE /flors/:id
