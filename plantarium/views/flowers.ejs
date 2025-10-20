@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flors - Plantarium</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h3>Llista flors</h3>
+            <ul>
+
+                <% data.flowers.forEach((flower)=> { %>
+                    <li>
+                        <strong>
+                            <%= flower.name %>
+                        </strong><br>
+                        <span>Categoria: <%= flower.category %></span><br>
+                        <span>Estació: <%= flower.bloomSeason %></span>
+
+                        <button onclick="deleteFlower('<%= flower.id %>')">X</button>
+
+                    </li>
+
+                    <% }) %>
+            </ul>
+        </section>
+    </main>
+
+</body>
+
+</html>
+
+<script defer>
+    const btn = document.getElementById('delete-btn');
+
+    const deleteFlower = (id) => {
+        if (!confirm(`Segur que vols eliminar la planta ${id}?`)) return;
+
+        fetch(`/flors/${id}`, {
+            method: 'DELETE'
+        })
+            .then(response => {
+                if (!response.ok) throw new Error('Error en eliminar');
+                return response.json();
+            })
+            .then(data => {
+                console.log('Planta eliminada', data);
+            })
+            .catch(error => {
+                console.error('Error en eliminar la planta:', error);
+            });
+
+        setTimeout(() => {
+            window.location.href = '/flors'
+        }, 1000)
+    };
+</script>

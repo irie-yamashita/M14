@@ -59,39 +59,58 @@
     "trees": [
         {
             "id": 1,
-            "name": "Quercus robur",
-            "commonName": "Roures",
-            "family": "Fagaceae",
+            "name": "Roure",
+            "category": "Arbres de fulla caduca",
+            "color": "Verd intens",
+            "meaning": "Força i longevitat",
+            "bloomSeason": "Primavera",
             "origin": "Europa",
-            "description": "El roure és un arbre majestuós conegut per la seva longevitat i força. Les seves fulles lobulades i els fruits anomenats glans són característics d'aquesta espècie.",
-            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+            "description": "El roure és símbol de resistència i saviesa. Amb la seva capçada majestuosa i tronc robust, ha estat considerat sagrat en moltes cultures antigues.",
+            "img": "https://cdn-icons-png.flaticon.com/512/489/489969.png"
         },
         {
             "id": 2,
-            "name": "Acer platanoides",
-            "commonName": "Arce negre",
-            "family": "Sapindaceae",
-            "origin": "Europa i Àsia",
-            "description": "L'arce negre és un arbre caducifoli que destaca per les seves fulles palmatilobulades i la seva capacitat d'adaptació a diferents tipus de sòls. És conegut per la seva bellesa durant la tardor.",
-            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+            "name": "Pi pinyoner",
+            "category": "Arbres perennifolis",
+            "color": "Verd fosc",
+            "meaning": "Protecció i serenor",
+            "bloomSeason": "Primavera",
+            "origin": "Mediterrani",
+            "description": "El pi pinyoner és un arbre característic del paisatge mediterrani. Amb la seva copa rodona i pinyons saborosos, aporta ombra i calma als boscos.",
+            "img": "https://cdn-icons-png.flaticon.com/512/489/489969.png"
         },
         {
             "id": 3,
-            "name": "Betula pendula",
-            "commonName": "Bedoll blanc",
-            "family": "Betulaceae",
-            "origin": "Europa i Àsia",
-            "description": "El bedoll blanc és un arbre elegant amb una escorça blanca característica. Les seves fulles triangulars i la seva capacitat per créixer en sòls pobres el fan únic.",
-            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+            "name": "Olivera",
+            "category": "Arbres fruiters",
+            "color": "Verd argentat",
+            "meaning": "Pau i prosperitat",
+            "bloomSeason": "Primavera",
+            "origin": "Mediterrani",
+            "description": "L’olivera és un símbol de pau i saviesa. De les seves branques neix l’oli, considerat or líquid per la seva riquesa i valor nutricional.",
+            "img": "https://cdn-icons-png.flaticon.com/512/489/489969.png"
         },
         {
             "id": 4,
-            "name": "Pinus sylvestris",
-            "commonName": "Pi roig",
-            "family": "Pinaceae",
-            "origin": "Europa i Àsia",
-            "description": "El pi roig és un arbre conífer que es reconeix per la seva escorça vermellosa i les seves agulles fines. És una espècie important en els ecosistemes forestals.",
-            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+            "name": "Cirer",
+            "category": "Arbres fruiters",
+            "color": "Verd i vermell",
+            "meaning": "Dolçor i renovació",
+            "bloomSeason": "Primavera",
+            "origin": "Àsia",
+            "description": "El cirerer es cobreix de flors blanques abans de donar els seus fruits vermells. És un arbre que simbolitza la bellesa efímera i el renaixement.",
+            "img": "https://cdn-icons-png.flaticon.com/512/489/489969.png"
+        },
+        {
+            "id": 5,
+            "name": "Bedoll",
+            "category": "Arbres de fulla caduca",
+            "color": "Verd clar",
+            "meaning": "Renovació i puresa",
+            "bloomSeason": "Primavera",
+            "origin": "Europa del Nord",
+            "description": "El bedoll, amb la seva escorça blanca i elegant, representa la puresa i els nous començaments. Sovint creix en boscos lluminosos i frescos.",
+            "img": "https://cdn-icons-png.flaticon.com/512/489/489969.png"
         }
     ]
 }

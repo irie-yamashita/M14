@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbres - Plantarium</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h3>Llista arbres</h3>
+            <ul>
+
+                <% data.trees.forEach((tree)=> { %>
+                    <li>
+                        <strong>
+                            <%= tree.name %>
+                        </strong><br>
+                        <span>Categoria: <%= tree.category %></span><br>
+                        <span>Estació: <%= tree.bloomSeason %></span>
+                    </li>
+
+                    <% }) %>
+            </ul>
+        </section>
+    </main>
+
+</body>
+
+</html>

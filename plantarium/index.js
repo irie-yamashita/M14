@@ -5,6 +5,9 @@ import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import { authMiddleware } from "./authMiddleware.js";
 
+import florsRouter from "./routes/flowerRoutes.js";
+import arbresRouter from "./routes/treeRoutes.js";
+
 
 const app = express();
 app.use(express.json());
@@ -20,7 +23,8 @@ app.set("view engine", "ejs"); // Li dic a express quin és el motor de plantill
 app.set("views", "./views"); // Ubicació de les plantilles
 
 
-
+app.use("/flors", florsRouter);
+app.use("/arbres", arbresRouter);
 
 app.get("/", (req, res) => {
 
