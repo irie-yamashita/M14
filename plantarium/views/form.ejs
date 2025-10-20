@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afegir Planta - Plantarium</title>
+</head>
+<body>
+    <main>
+        <h2>Afegir nova planta</h2>
+
+        <form id="plant-form">
+
+            <div>
+                <label for="type">Tipus de planta:</label>
+                <select id="type" name="type">
+                    <option value="flor">Flor</option>
+                    <option value="arbre">Arbre</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="name">Nom:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div>
+                <label for="category">Categoria:</label>
+                <input type="text" id="category" name="category">
+            </div>
+
+            <div>
+                <label for="bloomSeason">Estació de floració:</label>
+                <select id="bloomSeason" name="bloomSeason">
+                    <option value="Primavera">Primavera</option>
+                    <option value="Estiu">Estiu</option>
+                    <option value="Tardor">Tardor</option>
+                    <option value="Hivern">Hivern</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="origin">Origen:</label>
+                <input type="text" id="origin" name="origin">
+            </div>
+
+            <div>
+                <label for="description">Descripció:</label>
+                <textarea id="description" name="description" rows="4" cols="50"></textarea>
+            </div>
+
+            <div>
+                <button type="submit">Afegir planta</button>
+            </div>
+
+        </form>
+    </main>
+</body>
+</html>
+
+<script>
+    const form = document.getElementById('plant-form');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const type = document.getElementById('type').value;
+        const ruta = type === 'flor' ? '/flors' : '/arbres';
+        const data = {
+            name: document.getElementById('name').value,
+            category: document.getElementById('category').value,
+            bloomSeason: document.getElementById('bloomSeason').value,
+            origin: document.getElementById('origin').value,
+            description: document.getElementById('description').value
+        };
+
+        fetch(ruta, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Error en afegir la planta');
+            return response.json();
+        })
+        .then(data => {
+            console.log('Planta afegida', data);
+            window.location.href = ruta;
+        })
+        .catch(error => {
+            console.error('Error en afegir la planta:', error);
+        });
+    });
+</script>

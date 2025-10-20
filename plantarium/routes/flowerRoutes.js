@@ -1,5 +1,7 @@
 import express from 'express';
 import fs from "fs"; //treballar amb arxius
+import crypto from 'node:crypto'; // no cal npm i, pq forma part ja de Node
+
 
 
 const router = express.Router();
@@ -31,10 +33,43 @@ router.get('/', (req, res) => {
     res.render("flowers", { data });
 });
 
+// GET /flors
+router.get('/form', (req, res) => {
+    const data = readData();
+    res.render("form", { data });
+});
+
+// POST /flors
+router.post('/', (req, res) => {
+    const data = readData();
+    const body = req.body;
+
+    // Crear nova planta amb ID incremental
+    const newId = crypto.randomUUID();
+
+
+    const newPlant = {
+        id: newId,
+        name: body.name || "",
+        category: body.category || "",
+        color: body.color || "",
+        meaning: body.meaning || "",
+        bloomSeason: body.bloomSeason || "",
+        origin: body.origin || "",
+        description: body.description || "",
+        type: body.type || "flor" // per indicar si és flor o arbre
+    };
+
+    data.flowers.push(newPlant);
+    writeData(data);
+
+    res.status(201).json(newPlant);
+});
+
 // DELETE /flors/:id
 router.delete("/:id", (req, res) => {
     const data = readData();
-    const id = parseInt(req.params.id);
+    const id = req.params.id;
     const flowerIndex = data.flowers.findIndex((flower) => flower.id === id);
 
     if (flowerIndex === -1) {
