@@ -2,21 +2,38 @@ import express from "express";
 import { UserRepository } from "./user-repository.js";
 import { PORT, SECRET_JWT_KEY} from "./config.js";
 import jwt from "jsonwebtoken";
+import cookieParser from "cookie-parser";
+import { authMiddleware } from "./authMiddleware.js";
 
 
 const app = express();
 app.use(express.json());
 app.use(express.static("public")); // Càrrega CSS i altres fitxers públics
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
 
+// middleware d'autenticació
+app.use(authMiddleware);
 
 
 app.set("view engine", "ejs"); // Li dic a express quin és el motor de plantilles (el format)
 app.set("views", "./views"); // Ubicació de les plantilles
 
 
+
+
 app.get("/", (req, res) => {
 
-  res.render("login");
+  if(!req.session.user){
+    return res.redirect("/protected");
+  }
+
+  res.render("home");
+});
+
+
+app.get("/register", (req, res) => {
+  res.render("register");
 });
 
 app.post("/register", async (req, res) => {
@@ -32,6 +49,11 @@ app.post("/register", async (req, res) => {
     res.status(400).send(error.message);
   }
 
+});
+
+app.get("/login", (req, res) => {
+
+  res.render("login");
 });
 
 app.post("/login", async (req, res) => {
@@ -65,6 +87,10 @@ app.post("/login", async (req, res) => {
 
 });
 
+
+app.get("/protected", (req, res) => {
+  res.render("protected");
+});
 
 app.listen(PORT, () => {
   console.log(`:P Server running on http://localhost:${PORT}/`);

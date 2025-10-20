@@ -1,0 +1,82 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color:#ABA43A;
+    height: 100vh;
+    max-width: 70%;
+    margin: auto;
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+
+main {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    width: 60%;
+
+    padding-top: 10px;
+
+    gap: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+label {
+    padding-bottom: 5px;
+}
+
+input[type="text"], input[type="password"]  {
+    height: 25px;
+    border-radius: 3px;
+
+    border: 1px solid rgb(129, 129, 129);
+}
+
+button {
+    width: 30%;
+
+    padding: 8px 3px;
+    border-radius: 8px;
+    border: none;
+
+    align-self: flex-end;
+    background-color: #F26457;
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    transition: transform background-color 0.3s ease;
+
+}
+
+button:hover {
+    cursor: pointer;
+    background-color:#F28972;
+    transition: background-color 0.3s ease;
+    transform: scale(1.05);
+}
+
+a {
+    color: whirtesmoke;
+}

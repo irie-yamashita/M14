@@ -1,0 +1,97 @@
+{
+    "flowers": [
+        {
+            "id": 1,
+            "name": "Rosa",
+            "category": "Flors per a jardins",
+            "color": "Vermell",
+            "meaning": "Amor i passió",
+            "bloomSeason": "Primavera",
+            "origin": "Àsia",
+            "description": "La rosa vermella és símbol universal de l’amor. Amb els seus pètals suaus i aroma intens, floreix com una promesa en els jardins de primavera.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+        },
+        {
+            "id": 2,
+            "name": "Lliri",
+            "category": "Flors d'interior",
+            "color": "Blanc",
+            "meaning": "Puresa i renovació",
+            "bloomSeason": "Estiu",
+            "origin": "Europa",
+            "description": "El lliri blanc destaca per la seva elegància serena. Sovint associat amb la puresa, omple els espais amb una presència tranquil·la i refinada.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+        },
+        {
+            "id": 3,
+            "name": "Margarita",
+            "category": "Flors silvestres",
+            "color": "Blanc",
+            "meaning": "Innocència i sinceritat",
+            "bloomSeason": "Primavera",
+            "origin": "Amèrica del Nord",
+            "description": "Amb el seu cor groc i pètals blancs, la margarita evoca la simplicitat de la natura. És la flor dels camps oberts i dels somnis infantils.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+        },
+        {
+            "id": 4,
+            "name": "Tulipa",
+            "category": "Flors per a jardins",
+            "color": "Groc",
+            "meaning": "Alegria i amistat",
+            "bloomSeason": "Primavera",
+            "origin": "Turquia",
+            "description": "La tulipa groga brilla com un raig de sol. Representa l’alegria compartida i és ideal per regalar a aquells que il·luminen la teva vida.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+        },
+        {
+            "id": 5,
+            "name": "Orquídia",
+            "category": "Flors exòtiques",
+            "color": "Violeta",
+            "meaning": "Elegància i misteri",
+            "bloomSeason": "Tardor",
+            "origin": "Regions tropicals",
+            "description": "L’orquídia violeta és una flor sofisticada i enigmàtica. Amb formes úniques i colors intensos, captiva la mirada i desperta la curiositat.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+        }
+    ],
+    "trees": [
+        {
+            "id": 1,
+            "name": "Quercus robur",
+            "commonName": "Roures",
+            "family": "Fagaceae",
+            "origin": "Europa",
+            "description": "El roure és un arbre majestuós conegut per la seva longevitat i força. Les seves fulles lobulades i els fruits anomenats glans són característics d'aquesta espècie.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+        },
+        {
+            "id": 2,
+            "name": "Acer platanoides",
+            "commonName": "Arce negre",
+            "family": "Sapindaceae",
+            "origin": "Europa i Àsia",
+            "description": "L'arce negre és un arbre caducifoli que destaca per les seves fulles palmatilobulades i la seva capacitat d'adaptació a diferents tipus de sòls. És conegut per la seva bellesa durant la tardor.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+        },
+        {
+            "id": 3,
+            "name": "Betula pendula",
+            "commonName": "Bedoll blanc",
+            "family": "Betulaceae",
+            "origin": "Europa i Àsia",
+            "description": "El bedoll blanc és un arbre elegant amb una escorça blanca característica. Les seves fulles triangulars i la seva capacitat per créixer en sòls pobres el fan únic.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+        },
+        {
+            "id": 4,
+            "name": "Pinus sylvestris",
+            "commonName": "Pi roig",
+            "family": "Pinaceae",
+            "origin": "Europa i Àsia",
+            "description": "El pi roig és un arbre conífer que es reconeix per la seva escorça vermellosa i les seves agulles fines. És una espècie important en els ecosistemes forestals.",
+            "img": "https://cdn-icons-png.freepik.com/512/6900/6900993.png"
+        }
+    ]
+}

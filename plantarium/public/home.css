@@ -1,0 +1,65 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color:#ABA43A;
+    height: 100vh;
+    max-width: 70%;
+    margin: auto;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+main {
+    margin-top: 100px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:  whitesmoke;
+}
+
+.crud-list {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.crud-list img {
+    width: 150px;
+    height: 150px;
+
+    transition: transform 0.3s ease;
+
+}
+
+.crud-list a {
+    text-decoration: none;
+    display: inline-block;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+
+    color: whitesmoke;
+    
+}
+
+a p {
+    font-weight: 600;
+}
+
+.crud-list img:hover {
+    transform: rotate(30deg) scale(1.05);
+    transition: transform 0.3s ease;
+
+    filter: brightness(0.8) contrast(1.2) saturate(1.5);
+}
