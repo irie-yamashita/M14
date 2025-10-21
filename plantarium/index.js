@@ -3,7 +3,7 @@ import { UserRepository } from "./user-repository.js";
 import { PORT, SECRET_JWT_KEY} from "./config.js";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
-import { authMiddleware } from "./authMiddleware.js";
+import { authMiddleware, requireAuth} from "./authMiddleware.js";
 
 import { readData, writeData } from "./controllers/db.controller.js";
 
@@ -18,6 +18,7 @@ app.use(express.static("public")); // Càrrega CSS i altres fitxers públics
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
+
 // middleware d'autenticació
 app.use(authMiddleware);
 
@@ -26,8 +27,8 @@ app.set("view engine", "ejs"); // Li dic a express quin és el motor de plantill
 app.set("views", "./views"); // Ubicació de les plantilles
 
 
-app.use("/flors", florsRouter);
-app.use("/arbres", arbresRouter);
+app.use("/flors", requireAuth, florsRouter);
+app.use("/arbres", requireAuth, arbresRouter);
 
 app.get("/", (req, res) => {
 
