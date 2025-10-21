@@ -1,22 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
     <title>Home</title>
 </head>
+
 <body>
     <main>
         <h1>PLANTARIUM</h1>
         <ul class="crud-list">
             <li>
-                <a href="/flors"><img src="flor.png" alt="flors"><p>FLORS</p></a>
+                <a href="/flors"><img src="flor.png" alt="flors">
+                    <p>FLORS</p>
+                </a>
             </li>
             <li>
-                <a href="/arbres"><img src="arbre.png" alt="arbres"><p>ARBRES</p></a>
+                <a href="/arbres"><img src="arbre.png" alt="arbres">
+                    <p>ARBRES</p>
+                </a>
             </li>
         </ul>
+
+        <button id="logout-btn">Tancar sessió</button>
     </main>
 </body>
+
 </html>
+
+<script>
+
+    const logoutBtn = document.getElementById('logout-btn'); 
+
+    logoutBtn.addEventListener('click', e => {
+        e.preventDefault()
+        fetch('/logout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => {
+                console.log(res)
+                window.location.href = '/'
+            })
+    });
+</script>
