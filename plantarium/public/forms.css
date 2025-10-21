@@ -4,7 +4,7 @@ body {
     padding: 0;
     box-sizing: border-box;
 
-    background-color:#ABA43A;
+    background-color:#F2EDE4;
     height: 100vh;
     max-width: 70%;
     margin: auto;
@@ -14,7 +14,7 @@ body {
 }
 
 h1 {
-    color: whitesmoke;
+    color: #738903;
 }
 
 
@@ -62,7 +62,7 @@ button {
     border: none;
 
     align-self: flex-end;
-    background-color: #F26457;
+    background-color: #738903;
 
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 
@@ -72,11 +72,26 @@ button {
 
 button:hover {
     cursor: pointer;
-    background-color:#F28972;
+    background-color:#B9BF04;
     transition: background-color 0.3s ease;
     transform: scale(1.05);
 }
 
 a {
-    color: whirtesmoke;
+    color: #738903;
+}
+
+.img-container {
+    width: 50px;
+    height: 50px;
+    background-color: #738903;
+    border-radius: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-container img {
+    width: 70%;
 }

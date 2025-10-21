@@ -5,59 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arbres - Plantarium</title>
+    <link rel="stylesheet" href="list.css">
 </head>
 
 <body>
+    <a class="return-btn" href="/">< PLANTARIUM</a>
     <main>
-        <section>
-            <h3>Llistat arbres</h3>
-            <a href="/form">+</a>
-            <ul>
-
-                <% data.trees.forEach((tree)=> { %>
-                    <li>
-                        <strong>
+        <h1>ARBRES</h1>
+        <a class="add-btn" href="/form"><img src="plus-square.svg" alt="add-btn"></a>
+        <ul>
+            <% data.trees.forEach((tree)=> { %>
+                <li>
+                    <img class="flor-img" src="arbre.png" alt="arbre">
+                    <div class="content-container">
+                        <p class="title">
                             <%= tree.name %>
-                        </strong><br>
-                        <span>Categoria: <%= tree.category %></span><br>
-                        <span>Estació: <%= tree.bloomSeason %></span>
+                        </p>
+                        <p><strong>Categoria:</strong> <%= tree.category %></p>
+                        <p><strong>Estació:</strong> <%= tree.bloomSeason %></p>
 
-                        <a href="/form-edit?id=<%= tree.id %>">Edit</a>
-                        <button onclick="deleteTree('<%= tree.id %>')">X</button>
-
-                    </li>
-
-                    <% }) %>
-            </ul>
-        </section>
+                        <div class="btn-container">
+                            <a class="cta" href="/form-edit?id=<%= tree.id %>">
+                                <img src="edit-2.svg" alt="edit-btn">
+                            </a>
+                            <button class="cta" onclick="deleteTree('<%= tree.id %>')">
+                                <img src="trash-2.svg" alt="delete-btn">
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
     </main>
-
 </body>
 
 </html>
 
 <script defer>
-    const btn = document.getElementById('delete-btn');
-
     const deleteTree = (id) => {
-        if (!confirm(`Segur que vols eliminar la planta ${id}?`)) return;
+        if (!confirm(`Segur que vols eliminar l'arbre ${id}?`)) return;
 
         fetch(`/arbres/${id}`, {
             method: 'DELETE'
         })
-        .then(response => {
-            if (!response.ok) throw new Error('Error en eliminar');
-            return response.json();
-        })
-        .then(data => {
-            console.log('Planta eliminada', data);
-        })
-        .catch(error => {
-            console.error('Error en eliminar la planta:', error);
-        });
+            .then(response => {
+                if (!response.ok) throw new Error('Error en eliminar');
+                return response.json();
+            })
+            .then(data => {
+                console.log('Arbre eliminat', data);
+            })
+            .catch(error => {
+                console.error('Error en eliminar l’arbre:', error);
+            });
 
         // recarrego la pàgina perquè es vegi el canvi
         window.location.href = "/arbres";
-
     };
 </script>

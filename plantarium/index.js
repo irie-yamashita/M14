@@ -98,8 +98,7 @@ app.post("/login", async (req, res) => {
 app.post("/logout", (req, res) => {
   res
     .clearCookie("access_token")
-    .json({ message: "sessió tancada" })
-    .send("logout");
+    .json({ message: "sessió tancada" });
 });
 
 

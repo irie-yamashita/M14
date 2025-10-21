@@ -4,12 +4,15 @@ body {
     padding: 0;
     box-sizing: border-box;
 
-    background-color:#ABA43A;
+    background-color:#F2EDE4;
+    color: #738903;
     height: 100vh;
     max-width: 70%;
     margin: auto;
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    position: relative;
 
 }
 
@@ -21,7 +24,8 @@ h1 {
     text-align: center;
     padding-top: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:  whitesmoke;
+    color: #738903;
+
 }
 
 .crud-list {
@@ -48,12 +52,12 @@ h1 {
     flex-direction: column;
     align-items: center;
     align-items: center;
-
-    color: whitesmoke;
     
 }
 
 a p {
+    color: #738903;
+
     font-weight: 600;
 }
 
@@ -62,4 +66,39 @@ a p {
     transition: transform 0.3s ease;
 
     filter: brightness(0.8) contrast(1.2) saturate(1.5);
+}
+
+button {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+
+    align-self: flex-end;
+    background-color: #738903;
+
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+    transition: transform background-color 0.3s ease;
+
+}
+
+button:hover {
+    cursor: pointer;
+    background-color:#B9BF04;
+    transition: background-color 0.3s ease;
+    transform: scale(1.05);
+}
+
+button img {
+    width: 14px;
+
 }

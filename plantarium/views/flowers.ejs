@@ -5,31 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flors - Plantarium</title>
+    <link rel="stylesheet" href="list.css">
 </head>
 
 <body>
+    <a class="return-btn" href="/">< PLANTARIUM</a>
     <main>
-        <section>
-            <h3>Llista flors</h3>
-            <a href="/form">+</a>
-            <ul>
-
-                <% data.flowers.forEach((flower)=> { %>
-                    <li>
-                        <strong>
+        <h1>FLORS</h1>
+        <a class="add-btn" href="/form"><img src="plus-square.svg" alt="add-btn"></a>
+        <ul>
+            <% data.flowers.forEach((flower)=> { %>
+                <li>
+                    <img class="flor-img" src="flor.png" alt="flor">
+                    <div class="content-container">
+                        <p class="title">
                             <%= flower.name %>
-                        </strong><br>
-                        <span>Categoria: <%= flower.category %></span><br>
-                        <span>Estació: <%= flower.bloomSeason %></span>
+                        </p>
+                        <p><strong>Categoria:</strong> <%= flower.category %></p>
+                        <p><strong>Estació:</strong> <%= flower.bloomSeason %></p>
+    
+                        <div class="btn-container">
+                            <a class="cta" href="/form-edit?id=<%= flower.id %>"><img src="edit-2.svg" alt="edit-btn"></a>
+                            <button class="cta" onclick="deleteFlower('<%= flower.id %>')"><img src="trash-2.svg" alt="edit-btn"></button>
+                        </div>
+                    </div>
 
-                        <a href="/form-edit?id=<%= flower.id %>">Edit</a>
-                        <button onclick="deleteFlower('<%= flower.id %>')">X</button>
+                </li>
 
-                    </li>
+                <% }) %>
+        </ul>
 
-                    <% }) %>
-            </ul>
-        </section>
     </main>
 
 </body>
@@ -45,16 +50,16 @@
         fetch(`/flors/${id}`, {
             method: 'DELETE'
         })
-        .then(response => {
-            if (!response.ok) throw new Error('Error en eliminar');
-            return response.json();
-        })
-        .then(data => {
-            console.log('Planta eliminada', data);
-        })
-        .catch(error => {
-            console.error('Error en eliminar la planta:', error);
-        });
+            .then(response => {
+                if (!response.ok) throw new Error('Error en eliminar');
+                return response.json();
+            })
+            .then(data => {
+                console.log('Planta eliminada', data);
+            })
+            .catch(error => {
+                console.error('Error en eliminar la planta:', error);
+            });
 
         // recarrego la pàgina perquè es vegi el canvi
         window.location.href = "/flors";
