@@ -100,20 +100,25 @@ app.get("/protected", (req, res) => {
 });
 
 
-// GET /form
+// FORMS
 app.get('/form', (req, res) => {
     const data = readData();
     res.render("form", { data });
 });
 
-// GET /form-edit
 app.get('/form-edit', (req, res) => {
     const id = parseInt(req.query.id);
-    console.log("idddd", id, req.url);
-    const data = readData();
-    const dataFlower = data.flowers.find(flower => flower.id === id);
 
-    res.render("form-edit", { data: dataFlower });
+    const data = readData();
+    let dataFinal = {};
+
+    if(id%2 == 0) {
+      dataFinal = data.trees.find(tree => tree.id === id);
+    } else {
+      dataFinal = data.flowers.find(flower => flower.id === id);
+    }
+
+    res.render("form-edit", { data: dataFinal });
 });
 
 

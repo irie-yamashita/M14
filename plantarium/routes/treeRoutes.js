@@ -45,7 +45,7 @@ router.post("/", (req, res) => {
     type: body.type || "arbre", // per indicar si és flor o arbre
   };
 
-  data.flowers.push(newPlant);
+  data.trees.push(newPlant);
   writeData(data);
 
   res.status(201).json(newPlant);

@@ -10,7 +10,8 @@
 <body>
     <main>
         <section>
-            <h3>Llista arbres</h3>
+            <h3>Llistat arbres</h3>
+            <a href="/form">+</a>
             <ul>
 
                 <% data.trees.forEach((tree)=> { %>
@@ -20,6 +21,10 @@
                         </strong><br>
                         <span>Categoria: <%= tree.category %></span><br>
                         <span>Estació: <%= tree.bloomSeason %></span>
+
+                        <a href="/form-edit?id=<%= tree.id %>">Edit</a>
+                        <button onclick="deleteTree('<%= tree.id %>')">X</button>
+
                     </li>
 
                     <% }) %>
@@ -30,3 +35,29 @@
 </body>
 
 </html>
+
+<script defer>
+    const btn = document.getElementById('delete-btn');
+
+    const deleteTree = (id) => {
+        if (!confirm(`Segur que vols eliminar la planta ${id}?`)) return;
+
+        fetch(`/arbres/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Error en eliminar');
+            return response.json();
+        })
+        .then(data => {
+            console.log('Planta eliminada', data);
+        })
+        .catch(error => {
+            console.error('Error en eliminar la planta:', error);
+        });
+
+        // recarrego la pàgina perquè es vegi el canvi
+        window.location.href = "/arbres";
+
+    };
+</script>
