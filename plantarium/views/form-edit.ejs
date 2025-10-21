@@ -16,14 +16,8 @@
         
         <form id="plant-form">
             <input type="hidden" id="plant-id" value="<%= data.id %>">
+            <input type="hidden" id="type" value="<%= data.type %>">
 
-            <div class="input-container">
-                <label for="type">Tipus de planta:</label>
-                <select id="type" name="type">
-                    <option value="flor" <%= data.type === 'flor' ? 'selected' : '' %>>Flor</option>
-                    <option value="arbre" <%= data.type === 'arbre' ? 'selected' : '' %>>Arbre</option>
-                </select>
-            </div>
 
             <div class="input-container">
                 <label for="name">Nom:</label>
