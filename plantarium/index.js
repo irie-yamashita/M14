@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
     return res.redirect("/protected");
   }
 
-  res.render("home");
+  res.render("home", {user: req.session.user});
 });
 
 

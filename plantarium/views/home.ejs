@@ -24,9 +24,16 @@
             </li>
         </ul>
 
-        <button id="logout-btn">
-            <img src="log-out.svg" alt="log-out">
-        </button>
+        
+        <div class="user">
+            <div class="flex">
+                <img src="user.svg" alt="user-icon">
+                <p><%= user ? user.username : 'noo'   %></p>
+            </div>
+            <button id="logout-btn">
+                <img src="log-out.svg" alt="log-out">
+            </button>
+        </div>
     </main>
 </body>
 
