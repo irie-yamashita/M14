@@ -39,9 +39,9 @@ router.get('/form', (req, res) => {
     res.render("form", { data });
 });
 
-// GET /flors
+// GET /form-edit
 router.get('/form-edit', (req, res) => {
-    const id = req.query.id;
+    const id = parseInt(req.query.id);
     const data = readData();
     const dataFlower = data.flowers.find(flower => flower.id === id);
 
@@ -55,15 +55,12 @@ router.post('/', (req, res) => {
     const body = req.body;
 
     // Crear nova planta amb ID incremental
-    const newId = crypto.randomUUID();
-
+    const newId = data.flowers[data.flowers.length - 1] ? parseInt(data.flowers[data.flowers.length - 1].id)+1 : 0;
 
     const newPlant = {
         id: newId,
         name: body.name || "",
         category: body.category || "",
-        color: body.color || "",
-        meaning: body.meaning || "",
         bloomSeason: body.bloomSeason || "",
         origin: body.origin || "",
         description: body.description || "",
@@ -77,10 +74,13 @@ router.post('/', (req, res) => {
 });
 
 // PUT /flors/:id
-router.put("/flors/:id", (req, res) => {
+router.put("/:id", (req, res) => {
+
+    console.log("modificaaaaaaaaaaaaant");
+
     const data = readData();             
     const body = req.body; 
-    const id = req.params.id;
+    const id = parseInt(req.params.id);
 
     const flowerIndex = data.flowers.findIndex(flower => flower.id === id);
 
@@ -96,13 +96,13 @@ router.put("/flors/:id", (req, res) => {
 
     writeData(data);
 
-    res.json({ message: "Flor actualitzada correctament" });
+    res.json({ message: "Flor actualitzada correctament"});
 });
 
 // DELETE /flors/:id
 router.delete("/:id", (req, res) => {
     const data = readData();
-    const id = req.params.id;
+    const id = parseInt(req.params.id);
     const flowerIndex = data.flowers.findIndex((flower) => flower.id === id);
 
     if (flowerIndex === -1) {

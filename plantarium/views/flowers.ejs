@@ -22,7 +22,7 @@
                         <span>Categoria: <%= flower.category %></span><br>
                         <span>Estació: <%= flower.bloomSeason %></span>
 
-                        <button onclick="editFlower('<%= flower.id %>')">Edit</button>
+                        <a href="/flors/form-edit?id=<%= flower.id %>" onclick="editFlower('<%= flower.id %>')">Edit</a>
                         <button onclick="deleteFlower('<%= flower.id %>')">X</button>
 
                     </li>
@@ -56,12 +56,5 @@
                 console.error('Error en eliminar la planta:', error);
             });
 
-        setTimeout(() => {
-            window.location.href = '/flors'
-        }, 1000)
-    };
-
-    const editFlower = (id) => {
-        window.location.href = `/flors/form-edit?id=${id}`;
     };
 </script>
