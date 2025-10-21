@@ -60,7 +60,7 @@
         const username = $('#username').value;
         const password = $('#password').value;
         const passwordConfirm = $('#password-confirm').value;
-        
+
         const registerSpan = $('.span-info');
 
 
@@ -82,6 +82,9 @@
                     registerSpan.style.color = "green";
 
                     console.log("Usuari registrat");
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 2000)
                 } else {
                     registerSpan.innerText = "Error en registrar l'usuari";
                     registerSpan.style.color = "red";
