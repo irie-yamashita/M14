@@ -25,6 +25,7 @@
                         <p><strong>Estació:</strong> <%= flower.bloomSeason %></p>
     
                         <div class="btn-container">
+                            <a class="cta" href="/flors/<%= flower.id %>"><img src="eye.svg" alt="details-btn"></a>
                             <a class="cta" href="/form-edit?id=<%= flower.id %>"><img src="edit-2.svg" alt="edit-btn"></a>
                             <button class="cta" onclick="deleteFlower('<%= flower.id %>')"><img src="trash-2.svg" alt="edit-btn"></button>
                         </div>

@@ -1,0 +1,89 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    padding: 50px 0px;
+
+    box-sizing: border-box;
+
+    background-color:#F2EDE4;
+    height: 100vh;
+    max-width: 70%;
+    margin: auto;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    position: relative;
+
+}
+
+a {
+    text-decoration: none;
+    color: #738903;
+}
+
+a:hover {
+    color: #B9BF04;
+}
+
+
+h1 {
+    text-align: start;
+    padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #738903;
+
+    margin: 0;
+    margin-bottom: 12px;
+
+}
+
+
+
+
+p {
+    margin: 0;
+}
+
+
+
+.plant-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+    gap: 50px;
+
+    text-align: start;
+}
+
+main .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #738903;  
+    max-width: 500px;
+
+    aspect-ratio: 1 / 1;;
+
+}
+
+.img-container img {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.return-btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: small;
+
+    text-decoration: none;
+    color: black;
+}
+
+
+.return-btn:hover {
+    color: #B9BF04;
+}

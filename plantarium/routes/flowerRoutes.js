@@ -20,7 +20,7 @@ router.get("/:id", (req, res) => {
     return res.status(404).json({ error: `Flor amb ID ${id} no trobada!` });
   }
 
-  res.status(200).json(dataFlower);
+  res.render("detail-plant", {data: dataFlower});
 });
 
 // POST /flors

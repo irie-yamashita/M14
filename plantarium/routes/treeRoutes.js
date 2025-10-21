@@ -22,7 +22,7 @@ router.get("/:id", (req, res) => {
     return res.status(404).json({ error: `Arbre amb ID ${id} no trobada!` });
   }
 
-  res.status(200).json(dataTree);
+  res.render("detail-plant", {data: dataTree})
 });
 
 // POST /trees
