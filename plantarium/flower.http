@@ -2,6 +2,9 @@
 ### GET
 GET http://localhost:3000/flors
 
+### GET
+GET http://localhost:3000/flors/77
+
 
 ###
 

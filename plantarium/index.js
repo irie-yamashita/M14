@@ -5,6 +5,9 @@ import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import { authMiddleware } from "./authMiddleware.js";
 
+import { readData, writeData } from "./controllers/db.controller.js";
+
+
 import florsRouter from "./routes/flowerRoutes.js";
 import arbresRouter from "./routes/treeRoutes.js";
 
@@ -95,6 +98,24 @@ app.post("/login", async (req, res) => {
 app.get("/protected", (req, res) => {
   res.render("protected");
 });
+
+
+// GET /form
+app.get('/form', (req, res) => {
+    const data = readData();
+    res.render("form", { data });
+});
+
+// GET /form-edit
+app.get('/form-edit', (req, res) => {
+    const id = parseInt(req.query.id);
+    console.log("idddd", id, req.url);
+    const data = readData();
+    const dataFlower = data.flowers.find(flower => flower.id === id);
+
+    res.render("form-edit", { data: dataFlower });
+});
+
 
 app.listen(PORT, () => {
   console.log(`:P Server running on http://localhost:${PORT}/`);

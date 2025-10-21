@@ -11,7 +11,7 @@
     <main>
         <section>
             <h3>Llista flors</h3>
-            <a href="/flors/form">+</a>
+            <a href="/form">+</a>
             <ul>
 
                 <% data.flowers.forEach((flower)=> { %>
@@ -22,7 +22,7 @@
                         <span>Categoria: <%= flower.category %></span><br>
                         <span>Estació: <%= flower.bloomSeason %></span>
 
-                        <a href="/flors/form-edit?id=<%= flower.id %>" onclick="editFlower('<%= flower.id %>')">Edit</a>
+                        <a href="/form-edit?id=<%= flower.id %>" onclick="editFlower('<%= flower.id %>')">Edit</a>
                         <button onclick="deleteFlower('<%= flower.id %>')">X</button>
 
                     </li>
@@ -45,16 +45,19 @@
         fetch(`/flors/${id}`, {
             method: 'DELETE'
         })
-            .then(response => {
-                if (!response.ok) throw new Error('Error en eliminar');
-                return response.json();
-            })
-            .then(data => {
-                console.log('Planta eliminada', data);
-            })
-            .catch(error => {
-                console.error('Error en eliminar la planta:', error);
-            });
+        .then(response => {
+            if (!response.ok) throw new Error('Error en eliminar');
+            return response.json();
+        })
+        .then(data => {
+            console.log('Planta eliminada', data);
+        })
+        .catch(error => {
+            console.error('Error en eliminar la planta:', error);
+        });
+
+        // recarrego la pàgina perquè es vegi el canvi
+        window.location.href = "/flors";
 
     };
 </script>
