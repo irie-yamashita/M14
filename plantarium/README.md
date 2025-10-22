@@ -1,6 +1,6 @@
 # Plantarium
 
-Aquest projecte és una petita aplicació web que mostra informació sobre flors i arbres. Està construïda amb Node.js, Express i EJS per a les plantilles. Inclou autenticació bàsica amb JSON Web Tokens i gestió d'usuaris en un repositori local (fitxers JSON).
+Aquest projecte és una petita web que mostra informació sobre flors i arbres. Està construïda amb Node.js, Express i EJS per a les plantilles. Inclou autenticació bàsica amb JSON Web Tokens i gestió d'usuaris en un repositori local (fitxers JSON).
 
 ## Què fa aquesta web
 
@@ -80,6 +80,12 @@ npm run dev
 
 ```
 http://localhost:3000
+```
+
+5. Registrar-se o iniciar sessió amb les següents credencials:
+```
+Usuari: itb
+Contrasenya: 123456
 ```
 
 Nota: el port per defecte es configura al fitxer `config.js`. Canvia la variable d'entorn o edita `config.js` si és necessari.
