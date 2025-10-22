@@ -30,15 +30,6 @@
     ],
     "trees": [
         {
-            "id": 2,
-            "name": "Roure",
-            "category": "Arbres de fulla caduca",
-            "bloomSeason": "Primavera",
-            "origin": "Europa",
-            "description": "El roure és símbol de resistència i saviesa. Amb la seva capçada majestuosa i tronc robust, ha estat considerat sagrat en moltes cultures antigues.",
-            "type": "arbre"
-        },
-        {
             "id": 4,
             "name": "Pi pinyoner",
             "category": "Arbres perennifolis",

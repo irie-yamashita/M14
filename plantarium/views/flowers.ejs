@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flors - Plantarium</title>
-    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="/css/list.css">
+    <script src="/js/flowers.js"></script>
 </head>
 
 <body>
     <a class="return-btn" href="/">< PLANTARIUM</a>
     <main>
         <h1>FLORS</h1>
-        <a class="add-btn" href="/form"><img src="plus-square.svg" alt="add-btn"></a>
+        <a class="add-btn" href="/form"><img src="/images/plus-square.svg" alt="add-btn"></a>
         <ul>
             <% data.flowers.forEach((flower)=> { %>
                 <li>
-                    <img class="flor-img" src="flor.png" alt="flor">
+                    <img class="flor-img" src="/images/flor.png" alt="flor">
                     <div class="content-container">
                         <p class="title">
                             <%= flower.name %>
@@ -25,9 +26,9 @@
                         <p><strong>Estació:</strong> <%= flower.bloomSeason %></p>
     
                         <div class="btn-container">
-                            <a class="cta" href="/flors/<%= flower.id %>"><img src="eye.svg" alt="details-btn"></a>
-                            <a class="cta" href="/form-edit?id=<%= flower.id %>"><img src="edit-2.svg" alt="edit-btn"></a>
-                            <button class="cta" onclick="deleteFlower('<%= flower.id %>')"><img src="trash-2.svg" alt="edit-btn"></button>
+                            <a class="cta" href="/flors/<%= flower.id %>"><img src="/images/eye.svg" alt="details-btn"></a>
+                            <a class="cta" href="/form-edit?id=<%= flower.id %>"><img src="/images/edit-2.svg" alt="edit-btn"></a>
+                            <button class="cta" onclick="deleteFlower('<%= flower.id %>')"><img src="/images/trash-2.svg" alt="edit-btn"></button>
                         </div>
                     </div>
 
@@ -41,29 +42,3 @@
 </body>
 
 </html>
-
-<script defer>
-    const btn = document.getElementById('delete-btn');
-
-    const deleteFlower = (id) => {
-        if (!confirm(`Segur que vols eliminar la planta ${id}?`)) return;
-
-        fetch(`/flors/${id}`, {
-            method: 'DELETE'
-        })
-            .then(response => {
-                if (!response.ok) throw new Error('Error en eliminar');
-                return response.json();
-            })
-            .then(data => {
-                console.log('Planta eliminada', data);
-            })
-            .catch(error => {
-                console.error('Error en eliminar la planta:', error);
-            });
-
-        // recarrego la pàgina perquè es vegi el canvi
-        window.location.href = "/flors";
-
-    };
-</script>

@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arbres - Plantarium</title>
-    <link rel="stylesheet" href="list.css">
+    <link rel="stylesheet" href="/css/list.css">
+    <script src="/js/trees.js"></script>
 </head>
 
 <body>
     <a class="return-btn" href="/">< PLANTARIUM</a>
     <main>
         <h1>ARBRES</h1>
-        <a class="add-btn" href="/form"><img src="plus-square.svg" alt="add-btn"></a>
+        <a class="add-btn" href="/form"><img src="/images/plus-square.svg" alt="add-btn"></a>
         <ul>
             <% data.trees.forEach((tree)=> { %>
                 <li>
-                    <img class="flor-img" src="arbre.png" alt="arbre">
+                    <img class="flor-img" src="/images/arbre.png" alt="arbre">
                     <div class="content-container">
                         <p class="title">
                             <%= tree.name %>
@@ -25,12 +26,12 @@
                         <p><strong>Estació:</strong> <%= tree.bloomSeason %></p>
 
                         <div class="btn-container">
-                            <a class="cta" href="/arbres/<%= tree.id %>"><img src="eye.svg" alt="details-btn"></a>
+                            <a class="cta" href="/arbres/<%= tree.id %>"><img src="/images/eye.svg" alt="details-btn"></a>
                             <a class="cta" href="/form-edit?id=<%= tree.id %>">
-                                <img src="edit-2.svg" alt="edit-btn">
+                                <img src="/images/edit-2.svg" alt="edit-btn">
                             </a>
                             <button class="cta" onclick="deleteTree('<%= tree.id %>')">
-                                <img src="trash-2.svg" alt="delete-btn">
+                                <img src="/images/trash-2.svg" alt="delete-btn">
                             </button>
                         </div>
                     </div>
@@ -41,26 +42,3 @@
 </body>
 
 </html>
-
-<script defer>
-    const deleteTree = (id) => {
-        if (!confirm(`Segur que vols eliminar l'arbre ${id}?`)) return;
-
-        fetch(`/arbres/${id}`, {
-            method: 'DELETE'
-        })
-            .then(response => {
-                if (!response.ok) throw new Error('Error en eliminar');
-                return response.json();
-            })
-            .then(data => {
-                console.log('Arbre eliminat', data);
-            })
-            .catch(error => {
-                console.error('Error en eliminar l’arbre:', error);
-            });
-
-        // recarrego la pàgina perquè es vegi el canvi
-        window.location.href = "/arbres";
-    };
-</script>
