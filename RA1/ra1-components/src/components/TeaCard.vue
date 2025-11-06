@@ -2,15 +2,21 @@
 
 <script setup>
     const props = defineProps({
-        name: String
-    })
+        nom: String
+    });
+    const emit = defineEmits(['sendName']);
+
+    const sendName = () => {
+      console.log('fill', props.nom)
+      emit('sendName', props.nom);
+    }
 </script>
 
 
 <template>
-  <div class="plan">
+  <div @click="sendName" class="plan">
     <div class="description">
-      <span class="title"> {{name}} </span>
+      <span class="title"> {{nom}} </span>
     </div>
   </div>
 </template>
