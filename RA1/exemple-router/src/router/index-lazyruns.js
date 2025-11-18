@@ -1,7 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/views/Home.vue";
-import Frameworks from "@/views/Frameworks.vue";
-import FrameworkDetail from "@/views/FrameworkDetail-watch.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,17 +6,17 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: Home,
+      component: () => import('@/views/Home.vue'),
     },
     {
       path: "/frameworks",
       name: "frameworks",
-      component: Frameworks,
+      component: () => import('@/views/Frameworks.vue'),
       children: [
         {
           path: ":id",
           name: "frameworkDetail",
-          component: FrameworkDetail
+          component: () => import('@/views/FrameworkDetail.vue'),
         },
       ],
     },
