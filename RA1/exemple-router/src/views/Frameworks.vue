@@ -21,8 +21,8 @@
     },
     ]);
 
-
 </script>
+
 
 <template>
     <h1>Frameworksss</h1>
@@ -31,5 +31,7 @@
           <RouterLink :to="`/frameworks/${framework.id}`">{{framework.name}}</RouterLink>
       </li>
     </ul>
-    <RouterView/>
+    <!-- <RouterView :key="$route.fullPath" /> -->
+    <RouterView />
+
 </template>

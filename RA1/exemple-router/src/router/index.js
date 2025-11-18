@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 import Frameworks from "@/views/Frameworks.vue";
-import FrameworkDetail from "@/views/FrameworkDetail.vue";
+import FrameworkDetail from "@/views/FrameworkDetail-watch.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
